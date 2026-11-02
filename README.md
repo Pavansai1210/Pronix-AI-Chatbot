@@ -59,6 +59,24 @@ The chatbot provides registration, email-based login verification, account modif
 | JavaScript | Script node processing |
 | Telegram | Chatbot deployment |
 
+
+## Project Screenshots
+
+### 1. Telegram Chatbot
+![Telegram Chatbot](screenshots/telegram-chatbot.png)
+
+### 2. User Registration Workflow
+![Registration Workflow](screenshots/registration-workflow.png)
+
+### 3. User Login Workflow
+![Login Workflow](screenshots/login-workflow.png)
+
+### 4. Modify Account
+![Modify Account](screenshots/modify-account.png)
+
+### 5. Delete Account
+![Delete Account](screenshots/delete-account.png)
+
 ## Chatbot Workflow
 
 ```text
@@ -106,7 +124,7 @@ Through this project, I gained practical experience in:
 - Building conversational applications using Kore.ai XO Platform.
 - Designing dialog tasks and chatbot workflows.
 - Working with intents and entities.
-- Integrating Custom Services and REST APIs.
+- Configuring Kore.ai Custom Services to connect with MockAPI.
 - Connecting chatbot workflows with MockAPI.
 - Processing responses using JavaScript Script nodes.
 - Implementing Search AI functionality.
