@@ -1,81 +1,120 @@
-
 # Pronix AI Chatbot
 
-Pronix is an AI-powered virtual assistant developed using the **Kore.ai XO Platform**. It provides an interactive chatbot experience through Telegram, helping users manage accounts, search company information, and understand different processes.
+An AI-powered virtual assistant developed using the **Kore.ai XO Platform**, integrated with Telegram to provide account management services and company information responses.
 
 ## Project Overview
 
-The chatbot combines conversational workflows, Search AI, and REST API integration to provide users with information and account-related services.
+Pronix AI Chatbot is a conversational virtual assistant designed to help users interact with account-related services and obtain information about Pronix.
 
-## Features
+The chatbot provides registration, email-based login verification, account modification, account deletion, and company information search through a conversational interface.
 
-### 1. User Account Management
-- User Registration.
-- User Login.
-- Modify Account.
-- Delete Account.
-- MockAPI integration for account-related operations.
+## Key Features
 
-### 2. Company Information Search
-- Integrated Search AI using the Kore.ai XO Platform.
-- Helps users search for company-related information.
-- Provides responses to company-related queries using connected company information sources.
+### 1. Welcome Interface
+- Displays a welcome message.
+- Provides Login and Register options.
 
-### 3. Process Guidance
-The chatbot handles process-related questions, such as:
-- How can I register?
-- How can I log in?
-- How can I modify my account?
-- How can I delete my account?
+### 2. User Registration
+- Collects username, email, phone number, and password.
+- Sends registration details to a Custom Service.
+- Integrates with MockAPI.
+- Displays registration success or failure messages.
 
-It provides relevant guidance and helps users navigate the appropriate chatbot workflows.
+### 3. User Login
+- Accepts the user's registered email address.
+- Verifies email registration through a Custom Service.
+- Checks the API response status code.
+- Provides Register Now, Retry, and Cancel options when the email is not registered.
 
-### 4. Conversational Features
-- Welcome message with Login and Register buttons.
-- Intent-based conversation handling.
-- FAQ and AI-powered responses.
-- Fallback handling for unrecognized questions.
-- JavaScript-based response handling.
+**Note:** Login currently uses email-based verification and does not request password authentication.
+
+### 4. Modify Account
+- Allows users to modify their username.
+- Allows users to update their phone number.
+- Sends updated information through a Custom Service.
+- Displays success or error messages.
+
+### 5. Delete Account
+- Asks for confirmation before deleting an account.
+- Provides Yes and No options.
+- Processes the deletion through a Custom Service.
+- Displays appropriate success or failure messages.
+
+### 6. Company Information Search
+- Uses the Kore.ai Search AI feature.
+- Handles company-related questions.
+- Uses a Script node to process Search AI responses.
+- Provides the Pronix website link in the demonstrated response.
 
 ## Technology Stack
 
-| Category | Technologies |
+| Technology | Purpose |
 |---|---|
-| Chatbot Platform | Kore.ai XO Platform |
-| AI Feature | Search AI |
-| API Integration | REST API, MockAPI |
-| Scripting | JavaScript |
-| Messaging Channel | Telegram |
-| Conversation Design | Dialog Tasks, Intents and Entities |
+| Kore.ai XO Platform | Chatbot development |
+| Dialog Tasks | Conversational workflows |
+| Intents and Entities | User input handling |
+| Search AI | Company information queries |
+| Custom Services | API integration |
+| MockAPI | Account data operations |
+| JavaScript | Script node processing |
+| Telegram | Chatbot deployment |
 
 ## Chatbot Workflow
 
-1. User opens the Pronix chatbot on Telegram.
-2. The chatbot displays a welcome message.
-3. User selects Login or Register, or asks a question.
-4. Account-related requests are processed through the respective workflows.
-5. MockAPI handles account-related operations.
-6. Search AI helps users find company information.
-7. Process-related questions receive relevant guidance.
-8. The chatbot displays the response to the user.
+```text
+                User
+                 |
+                 v
+           Welcome Message
+                 |
+          Login / Register
+             /       \
+            /         \
+      Registration    Login
+           |            |
+     Collect Details  Enter Email
+           |            |
+      Register API   Login API
+           |            |
+      Confirmation   Check Status
+                         |
+                  +------+------+
+                  |             |
+                200          Not 200
+                  |             |
+             Login Flow    Register / Retry
+                  |
+          Account Management
+              /       \
+             /         \
+        Modify       Delete
+        Account      Account
+```
+
+Company information queries are handled separately through Search AI.
 
 ## Live Demo
 
 - **Telegram Bot:** https://t.me/Pronix_AI_Pavan
 - **Kore.ai Web Client:** https://platform.kore.ai/xo-webclient/b6945fb69b4946fca087584418f0fb33a23b4ab1f1e347b49907ea01f679a263st00?lang=en
-- **Demo Video:** https://drive.google.com/file/d/1RHqQSoYEh6PGB5DHDGUoe04CnNc_hQ66/view?usp=drive_link
+- **Project Demo Video:** [Watch the demonstration](https://drive.google.com/file/d/1RHqQSoYEh6PGB5DHDGUoe04CnNc_hQ66/view?usp=drive_link)
 
-## What I Learned
+## Learning Outcomes
 
-- Building conversational AI applications using Kore.ai.
-- Designing dialog tasks, intents, and entities.
-- Integrating Search AI for company information retrieval.
-- Integrating REST APIs with chatbot workflows.
-- Using JavaScript for response handling.
-- Deploying and testing chatbots through Telegram.
+Through this project, I gained practical experience in:
+
+- Building conversational applications using Kore.ai XO Platform.
+- Designing dialog tasks and chatbot workflows.
+- Working with intents and entities.
+- Integrating Custom Services and REST APIs.
+- Connecting chatbot workflows with MockAPI.
+- Processing responses using JavaScript Script nodes.
+- Implementing Search AI functionality.
+- Deploying a chatbot on Telegram.
 
 ## Author
 
 **Bangaru Pavan Sai**
 
-- GitHub: https://github.com/Pavansai1210
+- GitHub: [Pavansai1210](https://github.com/Pavansai1210)
+- Project Repository: [Pronix AI Chatbot](https://github.com/Pavansai1210/Pronix-AI-Chatbot)
