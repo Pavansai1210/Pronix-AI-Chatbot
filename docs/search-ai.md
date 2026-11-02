@@ -1,45 +1,57 @@
+# Search AI – Company Information
 
-# Search AI — Pronix AI Chatbot
+## 1. Introduction
 
-## 1. Overview
+Pronix AI Chatbot uses the Search AI feature available in the Kore.ai XO Platform to handle company-related user questions.
 
-Pronix uses the Search AI feature of the Kore.ai XO Platform to help users find company-related information through conversational queries.
+It allows users to ask questions about Pronix through a conversational interface.
 
-## 2. Objective
+## 2. How It Works
 
-The objective of Search AI is to make company information easily accessible through the chatbot without requiring users to search manually.
+The Search AI workflow follows these steps:
 
-## 3. Key Features
+1. The user asks a company-related question.
+2. The question is processed through the Search AI node.
+3. Search AI generates a response.
+4. The response is passed to a JavaScript Script node.
+5. The Script node processes the response and stores the final answer in `context.finalAnswer`.
+6. A Message node displays the final answer to the user.
 
-- Search for company-related information.
-- Answer user questions about the company.
-- Provide conversational responses based on connected company information sources.
-- Allow users to interact using natural-language questions.
+## 3. Response Handling
 
-## 4. Example User Queries
+The chatbot uses JavaScript logic to handle Search AI responses.
 
-- Tell me about the company.
-- What services does the company provide?
-- Where can I find company information?
-- Give me details about the company.
+- When a suitable short answer is available, the chatbot displays that answer.
+- When the answer is long or unavailable, the chatbot provides the Pronix website link.
 
-## 5. Integration with the Chatbot
+Website: https://www.pronixinc.com
 
-1. The user sends a company-related question through Telegram.
-2. The chatbot processes the query using Search AI.
-3. Search AI retrieves relevant information from the connected knowledge source.
-4. The chatbot prepares and displays the response.
+## 4. Example Interaction
 
-## 6. Technology
+**User:**
+
+What does Pronix do?
+
+**Chatbot:**
+
+The chatbot provides the Pronix company website link so the user can find more information.
+
+https://www.pronixinc.com
+
+## 5. Technologies Used
 
 - Kore.ai XO Platform
 - Search AI
-- Natural Language Queries
-- Telegram
+- JavaScript Script Node
+- Message Node
 
-## 7. Benefits
+## 6. Benefits
 
-- Easy access to company information.
-- Natural conversational interaction.
-- Faster information retrieval.
-- Improved chatbot user experience.
+- Allows users to ask company-related questions naturally.
+- Provides automated responses.
+- Directs users to the official company website when needed.
+- Improves the chatbot's ability to handle information requests.
+
+## 7. Summary
+
+The Search AI feature adds company-information handling to Pronix AI Chatbot. It works with a JavaScript Script node to process responses before displaying them to users.
